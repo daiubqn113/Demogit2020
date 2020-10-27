@@ -6,45 +6,43 @@
 	$ward = mysqli_query($conn, "Select * from nv4_vi_location_ward");
 
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
-	$error = array();
-		//Validate
-    if(empty($_POST['name'])){
-        $error['name'] = 'Bạn chưa nhập tên';
-    }else{
-    	$name = $_POST['name'];
-    }
+		$error = array();
+			//Validate
+	    if(empty($_POST['name'])){
+	        $error['name'] = 'Bạn chưa nhập tên';
+	    }else{
+	    	$name = $_POST['name'];
+	    }
 
-    if(empty($_POST['phone'])){
-        $error['phone'] = 'Bạn chưa nhập số điện thoại';
-    }else{
-    	$phone = $_POST['phone'];
-    }
+	    if(empty($_POST['phone'])){
+	        $error['phone'] = 'Bạn chưa nhập số điện thoại';
+	    }else{
+	    	$phone = $_POST['phone'];
+	    }
 
-    if(empty($_POST['email'])){
-        $error['email'] = 'Bạn chưa nhập email';
-    }else{
-    	$email = $_POST['email'];
-    }
+	    if(empty($_POST['email'])){
+	        $error['email'] = 'Bạn chưa nhập email';
+	    }else{
+	    	$email = $_POST['email'];
+	    }
 
-    if(empty($_POST['province'])){
-        $error['province'] = 'Bạn chưa nhập Tỉnh';
-    }else{
-    	$province = $_POST['province'];
-    }
+	    if(empty($_POST['province'])){
+	        $error['province'] = 'Bạn chưa nhập Tỉnh';
+	    }else{
+	    	$province = $_POST['province'];
+	    }
 
-    if(empty($_POST['district'])){
-        $error['district'] = 'Bạn chưa nhập Quận';
-    }else{
-    	$district = $_POST['district'];
-    }
+	    if(empty($_POST['district'])){
+	        $error['district'] = 'Bạn chưa nhập Quận';
+	    }else{
+	    	$district = $_POST['district'];
+	    }
 
-	if(empty($_POST['ward'])){
-        $error['ward'] = 'Bạn chưa nhập Xã';
-    }else{
-    	$ward = $_POST['ward'];
-    }
-
-}
+		if(empty($_POST['ward'])){
+	        $error['ward'] = 'Bạn chưa nhập Xã';
+	    }else{
+	    	$ward = $_POST['ward'];
+	    }
 
     $query = mysqli_query($conn, "INSERT INTO information (name, phone, email, province, district, ward) values 
     	('$name', '$phone', '$email', '$province', '$district', '$ward')");
@@ -57,6 +55,8 @@
       }else{
          mysqli_error($conn);
       }
+	}
+
 
 
 ?>
