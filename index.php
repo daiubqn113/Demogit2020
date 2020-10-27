@@ -43,9 +43,7 @@
     }else{
     	$ward = $_POST['ward'];
     }
-
-}
-
+		
     $query = mysqli_query($conn, "INSERT INTO information (name, phone, email, province, district, ward) values 
     	('$name', '$phone', '$email', '$province', '$district', '$ward')");
 		echo "<pre>";
@@ -57,6 +55,10 @@
       }else{
          mysqli_error($conn);
       }
+
+}
+
+    
 
 
 ?>
